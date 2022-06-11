@@ -22,3 +22,6 @@ INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou 
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Ficou bom!', TIMESTAMP WITH TIME ZONE '2020-11-25T11:00:00Z',  true, '/offers/1/resource/1/sections/1', 1);
 INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Precisa melhorar!', TIMESTAMP WITH TIME ZONE '2020-11-25T11:00:00Z', true, '/offers/1/resource/1/sections/1', 1);
 
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Trilha principal do curso', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 2, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 0, 1);
