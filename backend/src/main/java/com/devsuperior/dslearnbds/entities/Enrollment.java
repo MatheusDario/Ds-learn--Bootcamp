@@ -15,25 +15,25 @@ public class Enrollment {
 
 	@EmbeddedId
 	private EnrollmentPK id = new EnrollmentPK();
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant enronllMoment;
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant refoundMoment;
-	private boolean availble;
+	private boolean available;
 	private boolean onlyUpdate;
 
 	public Enrollment() {
 	}
 
-	public Enrollment(User user, Offer offer, Instant enronllMoment, Instant refoundMoment, boolean availble,
+	public Enrollment(User user, Offer offer, Instant enronllMoment, Instant refoundMoment, boolean available,
 			boolean onlyUpdate) {
 		id.setUser(user);
 		id.setOffer(offer);
 		this.enronllMoment = enronllMoment;
 		this.refoundMoment = refoundMoment;
-		this.availble = availble;
+		this.available = available;
 		this.onlyUpdate = onlyUpdate;
 	}
 
@@ -70,11 +70,11 @@ public class Enrollment {
 	}
 
 	public boolean isAvailble() {
-		return availble;
+		return available;
 	}
 
-	public void setAvailble(boolean availble) {
-		this.availble = availble;
+	public void setAvailble(boolean available) {
+		this.available = available;
 	}
 
 	public boolean isOnlyUpdate() {
