@@ -2,7 +2,9 @@ package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -50,6 +53,13 @@ public class Topic implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "author_id")
 	private User author;
+	
+	@OneToMany
+	private List<Reply> replies = new ArrayList<>();
+	
+	@ManyToOne
+	@JoinColumn(name = "reply_id")
+	private Reply answer;
 	
 	public Topic() {
 	}
@@ -123,6 +133,18 @@ public class Topic implements Serializable {
 
 	public Set<User> getLikes() {
 		return likes;
+	}
+	
+	public Reply getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Reply answer) {
+		this.answer = answer;
+	}
+
+	public List<Reply> getReplies() {
+		return replies;
 	}
 
 	@Override
